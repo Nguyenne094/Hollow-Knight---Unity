@@ -19,7 +19,7 @@ TagManager:
   - 
   - Player
   - PlayerHitBox
-  - 
+  - Ground
   - 
   - 
   - 
@@ -43,6 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Back Layer 1
+    uniqueID: 3812578313
+    locked: 0
+  - name: Back Layer 2
+    uniqueID: 2112802717
+    locked: 0
   - name: Enemy
     uniqueID: 3645361345
     locked: 0
@@ -51,4 +57,16 @@ TagManager:
     locked: 0
   - name: VFX
     uniqueID: 2997401525
+    locked: 0
+  - name: Front Layer 1
+    uniqueID: 2472226335
+    locked: 0
+  - name: Front Layer 2
+    uniqueID: 4173440929
+    locked: 0
+  - name: Black Layer 1
+    uniqueID: 727959295
+    locked: 0
+  - name: Black Layer 2
+    uniqueID: 277808811
     locked: 0

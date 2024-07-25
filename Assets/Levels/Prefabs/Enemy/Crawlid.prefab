@@ -81,7 +81,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -649605951
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -914841481, guid: 8add12da5d515cf4b996cfe556ea8942, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -253,9 +253,11 @@ MonoBehaviour:
   maxHealth: 9999
   currentHealth: 0
   hurtColor: {r: 0, g: 0, b: 0, a: 1}
-  punchStrength: 20
+  knockbackForce: 5
+  knockbackDirection: {x: 5, y: 5}
   colorFlashDuration: 1
   colorFlashTimes: 3
+  takeDamageEventChannelSo: {fileID: 11400000, guid: 00749b7d1d9579d4c8d57d1ea03d9c61, type: 2}
   ContactedGameObjects: []
 --- !u!1 &6129608691941439690
 GameObject:

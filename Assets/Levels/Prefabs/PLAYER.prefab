@@ -83,7 +83,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1297565771
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 826951771, guid: 4b4539d8d3a29a0488c71b771aadb35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -405,8 +405,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4488137884359702341}
   - component: {fileID: 6209576478183830969}
-  - component: {fileID: 5617791318018646036}
   - component: {fileID: 5520600590421987755}
+  - component: {fileID: 5617791318018646036}
   m_Layer: 11
   m_Name: Down Slash
   m_TagString: Weapon
@@ -470,7 +470,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 28866063
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10261652, guid: 4b4539d8d3a29a0488c71b771aadb35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -483,19 +483,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5617791318018646036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3283942051171943142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fcc249c15d4080bd6a5b1615bfc616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!58 &5520600590421987755
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -532,6 +519,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.033672325, y: -0.08447842}
   m_Radius: 0.37285793
+--- !u!114 &5617791318018646036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3283942051171943142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fcc249c15d4080bd6a5b1615bfc616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &3425332201534745178
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,8 +542,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5999640374886834551}
   - component: {fileID: 5448290657186408943}
-  - component: {fileID: 1057242649601778115}
   - component: {fileID: 5767896936212902592}
+  - component: {fileID: 1057242649601778115}
   m_Layer: 11
   m_Name: Right Slash
   m_TagString: Weapon
@@ -607,7 +607,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 28866063
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10261652, guid: 4b4539d8d3a29a0488c71b771aadb35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -620,19 +620,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1057242649601778115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3425332201534745178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fcc249c15d4080bd6a5b1615bfc616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!58 &5767896936212902592
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -669,6 +656,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.033672325, y: -0.08447842}
   m_Radius: 0.37285793
+--- !u!114 &1057242649601778115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425332201534745178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fcc249c15d4080bd6a5b1615bfc616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &9096894335237705682
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,8 +679,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1898567114166641078}
   - component: {fileID: 4420390170960125142}
-  - component: {fileID: 7402473250066033347}
   - component: {fileID: 1092640103650163005}
+  - component: {fileID: 7402473250066033347}
   m_Layer: 11
   m_Name: Up Slash
   m_TagString: Weapon
@@ -744,7 +744,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 28866063
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10261652, guid: 4b4539d8d3a29a0488c71b771aadb35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -757,19 +757,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7402473250066033347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9096894335237705682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fcc249c15d4080bd6a5b1615bfc616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!58 &1092640103650163005
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -806,3 +793,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.033672325, y: -0.08447842}
   m_Radius: 0.37285793
+--- !u!114 &7402473250066033347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9096894335237705682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fcc249c15d4080bd6a5b1615bfc616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
