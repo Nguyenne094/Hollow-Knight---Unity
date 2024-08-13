@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 5192114186795221423}
   - component: {fileID: 4389651022968860418}
   - component: {fileID: 3392822825108523709}
+  - component: {fileID: 2595236146546072031}
+  - component: {fileID: 6221129816811385812}
+  - component: {fileID: 4584891575002821253}
   m_Layer: 10
   m_Name: PLAYER
   m_TagString: Player
@@ -40,6 +43,7 @@ Transform:
   - {fileID: 5999640374886834551}
   - {fileID: 1898567114166641078}
   - {fileID: 4488137884359702341}
+  - {fileID: 2330468754343599913}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &620782949121671248
@@ -179,7 +183,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0016884804, y: -0.04832101}
+  m_Offset: {x: -0.0016884804, y: -0.020920336}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -189,7 +193,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.43228626, y: 1.1757209}
+  m_Size: {x: 0.43228626, y: 1.1209196}
   m_EdgeRadius: 0
 --- !u!114 &5225694746507038732
 MonoBehaviour:
@@ -330,14 +334,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Persist: 1
-  CurrentState: 
   speed: 4
   gravity: -9.82
+  yVelocityLimit: -10
   fallingGravityMultiplier: 2
   moveInput: {x: 0, y: 0}
   canMove: 1
   canJump: 1
   jumpPress: 0
+  attackInput: 0
+  isFacingRight: 1
+  _playerStateMachine: {fileID: 6221129816811385812}
 --- !u!114 &4389651022968860418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +366,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 4097
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -395,6 +402,140 @@ MonoBehaviour:
   freezeFramesWhenHurt: 30
   hurtParticlePref: {fileID: 5316648959866462818, guid: 16441dbd3c41f6247bcfe8c9ac0d1392, type: 3}
   hurtSpriteEffectPref: {fileID: 3845977070754715306, guid: 432e0f7d2f013704c9bb6767900ed21c, type: 3}
+--- !u!114 &2595236146546072031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918949659866141621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46c4d19e5a44d13b835804da2961cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepSound: {fileID: 8300000, guid: 236072feec3ac9841b6b47f9f5069e53, type: 3}
+  footStepSoundVolume: 0.6
+  jumpSound: {fileID: 11400000, guid: f8aec9f4cd1032c40b2c49dcead6031b, type: 2}
+  landSound: {fileID: 11400000, guid: b29c1bb018cd0c648b39a373156dbe90, type: 2}
+  fallSound: {fileID: 8300000, guid: 0ebb6accfdf6bbc4f8ec49c72763b860, type: 3}
+  fallSoundVolume: 0.2
+  attackSoundEffect: {fileID: 11400000, guid: 80757d6ca37de2a4d98584f147fec702, type: 2}
+  damageSound: {fileID: 8300000, guid: d7e70430c7f8d614a9256c32c8566a05, type: 3}
+  damageSoundVolume: 1
+--- !u!114 &6221129816811385812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918949659866141621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72740ac5dde24dc2a639f1039c476772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentStateView: 
+  CurrentSubStateView: 
+  autoPause: 0
+  m_stateList: []
+--- !u!82 &4584891575002821253
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918949659866141621}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3283942051171943142
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,8 +658,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.033672325, y: -0.08447842}
-  m_Radius: 0.37285793
+  m_Offset: {x: -0.21, y: -0.08447842}
+  m_Radius: 0.64
 --- !u!114 &5617791318018646036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,8 +795,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.033672325, y: -0.08447842}
-  m_Radius: 0.37285793
+  m_Offset: {x: -0.21, y: -0.08447842}
+  m_Radius: 0.64
 --- !u!114 &1057242649601778115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,6 +810,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!1 &8661658645751838045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2330468754343599913}
+  m_Layer: 10
+  m_Name: Camera Following Object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2330468754343599913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661658645751838045}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7271838902404270473}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9096894335237705682
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,8 +963,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.033672325, y: -0.08447842}
-  m_Radius: 0.37285793
+  m_Offset: {x: -0.21, y: -0.08447842}
+  m_Radius: 0.64
 --- !u!114 &7402473250066033347
 MonoBehaviour:
   m_ObjectHideFlags: 0
