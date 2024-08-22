@@ -25,7 +25,6 @@ namespace Bap.State_Machine
         public override void Exit()
         {
             _ctx.Player.Animator.SetBool(PlayerAnimationString.Jump, false);
-            _ctx.Player.Animator.SetBool(PlayerAnimationString.IsGrounded, _ctx.Player.DirectionChecker.IsGrounded);
         }
 
         protected override void CheckSwitchState()
@@ -37,6 +36,10 @@ namespace Bap.State_Machine
             else if(_ctx.Player.DirectionChecker.IsGrounded)
             {
                 SwitchState(_factory.GetGroundState());
+            }
+            else if (_ctx.Player.AttackInput)
+            {
+                SwitchState(_factory.GetAttackState());
             }
         }
 

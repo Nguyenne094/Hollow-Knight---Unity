@@ -103,12 +103,12 @@ namespace Bap.State_Machine
 
         public bool IsIdle()
         {
-            return CurrentState == _stateFactory.GetIdleState();
+            return CurrentSubState == _stateFactory.GetIdleState();
         }
         
         public bool IsWalking()
         {
-            return CurrentState == _stateFactory.GetWalkState();
+            return CurrentSubState == _stateFactory.GetWalkState();
         }
         
         public bool IsJumping()

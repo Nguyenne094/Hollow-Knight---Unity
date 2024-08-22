@@ -13,7 +13,6 @@ namespace Bap.State_Machine
         public override void Enter()
         {
             InitializeSubState();
-            _ctx.Player.Animator.SetBool(PlayerAnimationString.IsGrounded, true);
         }
 
         public override void UpdateState()

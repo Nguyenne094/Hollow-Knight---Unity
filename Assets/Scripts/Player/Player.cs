@@ -41,9 +41,9 @@ public class Player : Utilities.Singleton<Player>
     private DirectionChecker directionChecker;
     private  HierarchicalStateMachine _playerStateMachine;
     
-    public bool JumpPress {get => jumpPress;}
+    public bool JumpPress { get => jumpPress; }
     public bool AttackInput { get => attackInput; }
-    public Rigidbody2D Rb {get => rb;}
+    public Rigidbody2D Rb { get => rb; }
     public bool IsFacingRight 
     {
         get => isFacingRight;
@@ -98,6 +98,7 @@ public class Player : Utilities.Singleton<Player>
     {
         animator.SetFloat(PlayerAnimationString.yVelocity, rb.velocity.y);
         animator.SetBool(PlayerAnimationString.Idle, _playerStateMachine.IsIdle());
+        animator.SetBool(PlayerAnimationString.IsGrounded, directionChecker.IsGrounded);
     }
 
     private void FixedUpdate()
@@ -173,13 +174,23 @@ public class Player : Utilities.Singleton<Player>
         }
     }
 
+    private float attackTimeout = 0.4f;
+    private float attackTime;
     public void Attack(InputAction.CallbackContext ctx)
     {
-        if(ctx.started)
+        if (ctx.started && attackTime == attackTimeout)
         {
             attackInput = true;
+            attackTimeout = .4f;
+            attackTime = attackTimeout;
+            
+            DOVirtual.DelayedCall(Time.deltaTime, () => attackInput = false);
+            DOVirtual.Float(attackTime, 0, attackTimeout, (x) =>
+            {
+                attackTime = x;
+                if (attackTime == 0)
+                    attackTime = attackTimeout;
+            });
         }
-        
-        attackInput = false;
     }
 }
