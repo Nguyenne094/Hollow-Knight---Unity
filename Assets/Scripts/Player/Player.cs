@@ -175,7 +175,7 @@ public class Player : Utilities.Singleton<Player>
     }
 
     private float attackTimeout = 0.4f;
-    private float attackTime;
+    private float attackTime = 0.4f;
     public void Attack(InputAction.CallbackContext ctx)
     {
         if (ctx.started && attackTime == attackTimeout)

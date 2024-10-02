@@ -81,7 +81,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -433,7 +433,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_0: -7597750337805091657
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_1: -9085992597655413298
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_10: -3313318972702483175
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_11: 3323860397357295606
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_2: 204621044444371588
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_3: -3165221655523859439
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_4: -787643012656017128
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_5: -1558497440940850706
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_6: -119525874854345868
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_7: -2570478539565004379
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_8: 5411973139069967218
+      SpriteAtlasTexture-Tut_Start__Group_0_-512x1024-fmt12-removebg-preview_9: -1320952456388897763
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

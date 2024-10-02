@@ -19,7 +19,7 @@ namespace Utilities
         /// Calculate the direction vector from origin to target
         /// </summary>
         /// <returns>A normalized direction vector 3D</returns>
-        public static Vector3 GetDirectionVector3s(Vector3 origin, Vector3 target)
+        public static Vector3 GetDirectionVector3(Vector3 origin, Vector3 target)
         {
             return (target - origin).normalized;
         }

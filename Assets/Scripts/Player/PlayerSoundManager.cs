@@ -32,7 +32,6 @@ public class PlayerSoundManager : MonoBehaviour
     private void Update()
     {
         PlayRunSound();
-        // PlayFallSound();
     }
 
     private void PlayRunSound()
@@ -86,6 +85,7 @@ public class PlayerSoundManager : MonoBehaviour
         if (instance.TryGetComponent(out PoolableObject poolableObject))
         {
             poolableObject.Parent = soundPoolDictionary[audioPref];
+            poolableObject.IsReleased = false;
         }
         instance.transform.position = transform.position;
         instance.SetActive(true);

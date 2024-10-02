@@ -7,6 +7,11 @@ namespace Bap.State_Machine
 {
     public class Walk : BaseState
     {
+        public Walk(HierarchicalStateMachine ctx, StateFactory factory) : base(ctx, factory)
+        {
+            
+        }
+        
         public override void Enter()
         {
             _ctx.Player.Animator.SetBool(PlayerAnimationString.Idle, false);
@@ -34,10 +39,6 @@ namespace Bap.State_Machine
         public override void InitializeSubState()
         {
             throw new System.NotImplementedException();
-        }
-
-        public Walk(HierarchicalStateMachine ctx, StateFactory factory) : base(ctx, factory)
-        {
         }
     }
 }

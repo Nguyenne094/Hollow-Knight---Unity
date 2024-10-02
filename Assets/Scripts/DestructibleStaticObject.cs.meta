@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2dfbb527181c43d4b7eea334c5dd131f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - destructedSprite: {instanceID: 0}
+  - audioSourcePef: {fileID: 6611951318337923883, guid: e203b292904849f4ab7a7daf6f9aa4aa, type: 3}
+  - destructionSound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

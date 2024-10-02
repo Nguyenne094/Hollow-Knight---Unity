@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8823040134619068067
 Transform:
   m_ObjectHideFlags: 0
@@ -50,7 +50,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -664,14 +664,14 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 12
+    type: 4
     angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 90, y: 0, z: 0}
+    m_Rotation: {x: -45, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -4799,9 +4799,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1297565771
-  m_SortingLayer: 5
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_RenderMode: 4
+  m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4846,7 +4846,8 @@ GameObject:
   - component: {fileID: 8535874040679553807}
   - component: {fileID: 7764340087783319651}
   - component: {fileID: 3889513695510497447}
-  - component: {fileID: 4304097696369330446}
+  - component: {fileID: 8871496968401341254}
+  - component: {fileID: 7894304524097614042}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -4864,7 +4865,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -27.448818, y: 2.6797025, z: 0}
-  m_LocalScale: {x: 0.2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8823040134619068067}
@@ -4910,11 +4911,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.40392157, g: 0.3529412, b: 0.3529412, a: 1}
+  m_SortingLayerID: -1433884541
+  m_SortingLayer: 4
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: cafcac3f8097a604ab4620753234e536, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4980,17 +4981,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.082092285, y: 0.23179197}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.99, y: 2.85}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.41086197, y: 2.3907518}
   m_EdgeRadius: 0
 --- !u!50 &3889513695510497447
 Rigidbody2D:
@@ -5019,7 +5020,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4304097696369330446
+--- !u!114 &8871496968401341254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5028,12 +5029,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 2658271732437920666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fec1664e8994be0aff59620e947e0ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 52f1ef888a2543c49b62d252882a9da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
-  currentHealth: 1
-  destructionParticleSystem: {fileID: 2590023808841813309}
-  attackableLayer:
+--- !u!114 &7894304524097614042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658271732437920666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfbb527181c43d4b7eea334c5dd131f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destructedSprite: {fileID: 0}
+  destructedSoundEffect: {fileID: 11400000, guid: dc7930db4fc88a24cb89eb9a960b6c1a, type: 2}
+  soundVolume: 0.5
+  destroyDegree: {x: -45, y: -145}
+  destroyObject: 1
+  attakerLayer:
     serializedVersion: 2
     m_Bits: 2048

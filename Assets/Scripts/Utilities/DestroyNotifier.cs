@@ -5,7 +5,7 @@ namespace Utilities
 {
     public class DestroyNotifier : MonoBehaviour
     {
-        public static event Action<GameObject> OnObjectDestroyed;
+        public event Action<GameObject> OnObjectDestroyed;
 
         public void OnDestroy()
         {

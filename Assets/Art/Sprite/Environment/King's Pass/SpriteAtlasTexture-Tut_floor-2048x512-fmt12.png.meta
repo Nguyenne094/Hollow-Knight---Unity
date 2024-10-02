@@ -57,7 +57,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -241,7 +241,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SpriteAtlasTexture-Tut_floor-2048x512-fmt12_0: 4464349179013371197
+      SpriteAtlasTexture-Tut_floor-2048x512-fmt12_1: 8365568425298834287
+      SpriteAtlasTexture-Tut_floor-2048x512-fmt12_2: -1643681532781349354
+      SpriteAtlasTexture-Tut_floor-2048x512-fmt12_3: 3926450119573206747
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

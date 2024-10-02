@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Weapon
+  - FadeOutTrigger
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Player
   - PlayerHitBox
   - Ground
-  - 
+  - FadeOutTrigger
   - 
   - 
   - 
@@ -40,10 +41,13 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Back Layer 2
+  - name: Background Layer 3
+    uniqueID: 2717647295
+    locked: 0
+  - name: Background Layer 2
     uniqueID: 2112802717
     locked: 0
-  - name: Back Layer 1
+  - name: Background Layer 1
     uniqueID: 3812578313
     locked: 0
   - name: Default
@@ -58,15 +62,15 @@ TagManager:
   - name: VFX
     uniqueID: 2997401525
     locked: 0
-  - name: Front Layer 1
-    uniqueID: 2472226335
+  - name: Default Layer 2
+    uniqueID: 2861082755
     locked: 0
-  - name: Front Layer 2
-    uniqueID: 4173440929
-    locked: 0
-  - name: Black Layer 1
+  - name: Foreground Layer 1
     uniqueID: 727959295
     locked: 0
-  - name: Black Layer 2
+  - name: Foreground Layer 2
     uniqueID: 277808811
+    locked: 0
+  - name: Foreground Layer 3
+    uniqueID: 371336205
     locked: 0
