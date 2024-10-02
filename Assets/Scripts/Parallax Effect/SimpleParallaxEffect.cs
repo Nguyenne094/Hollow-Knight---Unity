@@ -13,8 +13,8 @@ public class SimpleParallaxEffect : MonoBehaviour
     
     private Vector3 lastCameraPosition;
     private float disToSub => transform.position.z - _subject.transform.position.z;
-    private float clippingPlan => _mainCamera.transform.position.z + (disToSub > 0 ? _mainCamera.farClipPlane : _mainCamera.nearClipPlane);
-    private float parallaxFactor => Mathf.Abs(disToSub/clippingPlan);
+    private float clippingPlan => Mathf.Abs(_mainCamera.transform.position.z + (disToSub > 0 ? _mainCamera.farClipPlane : _mainCamera.nearClipPlane));
+    private float parallaxFactor => disToSub/clippingPlan;
     
     private void Start()
     {

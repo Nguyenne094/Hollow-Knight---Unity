@@ -5,8 +5,11 @@ using UnityEngine;
 using UnityEngine.Pool;
 using Utilities;
 
+/// <summary>
+/// Play sound effect using object pool. Useful for playing lots of sound effects at the same time.
+/// </summary>
 public class SoundManager : Singleton<SoundManager>
-{
+{ 
  private AudioSource audioSource;
  private Dictionary<GameObject, ObjectPool<GameObject>> soundPoolDictionary = new Dictionary<GameObject, ObjectPool<GameObject>>();
  

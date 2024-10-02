@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5870f09b0a0c5dc449b025a5d93cfad9
+guid: 2e8ca029ade001749af7d18d5e0b764d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8509550459451208454
-    second: water_0
+      213: -8862518128500134496
+    second: particle_drip_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: water_0
+      name: particle_drip_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 14
         y: 0
-        width: 106
-        height: 292
+        width: 15
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 603f9ddae0ff71670800000000000000
-      internalID: 8509550459451208454
+      spriteID: 0ad2a4fb7b2020580800000000000000
+      internalID: -8862518128500134496
       vertices: []
       indices: 
       edges: []
@@ -162,14 +162,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      particle_drip_0: -8862518128500134496
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

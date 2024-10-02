@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8517248538003587160}
   - component: {fileID: 5199604796833489837}
-  - component: {fileID: 8913047195243079581}
   - component: {fileID: 47671781543906522}
   - component: {fileID: 789951895855089966}
+  - component: {fileID: 8913047195243079581}
   m_Layer: 0
   m_Name: horn_poles
   m_TagString: Untagged
@@ -90,26 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8913047195243079581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3324973204148319534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfbb527181c43d4b7eea334c5dd131f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destructedSprite: {fileID: 4545322994944871350, guid: fa26aa3becf1bfc46821c190bcdda56b, type: 3}
-  destructedSoundEffect: {fileID: 11400000, guid: dc7930db4fc88a24cb89eb9a960b6c1a, type: 2}
-  soundVolume: 0.5
-  destroyDegree: {x: -45, y: -145}
-  destroyObject: 0
-  attakerLayer:
-    serializedVersion: 2
-    m_Bits: 2048
 --- !u!61 &47671781543906522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -183,6 +163,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8913047195243079581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3324973204148319534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfbb527181c43d4b7eea334c5dd131f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destructedSprite: {fileID: 4545322994944871350, guid: fa26aa3becf1bfc46821c190bcdda56b, type: 3}
+  destructedSoundEffect: {fileID: 11400000, guid: dc7930db4fc88a24cb89eb9a960b6c1a, type: 2}
+  soundVolume: 0.5
+  destroyDegree: {x: -45, y: -145}
+  destroyObject: 0
+  attakerLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1 &6062381058647501550
 GameObject:
   m_ObjectHideFlags: 0
