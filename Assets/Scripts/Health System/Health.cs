@@ -31,8 +31,8 @@ namespace HealthSystem
         [Header("Event Channel")]
         [SerializeField] private FloatEventChannelSO takeDamageEventChannelSo;
         
-        [Header("Debug")]
-        public List<GameObject> ContactedGameObjects;
+        [SerializeField] public GameObject contactedGameObject;
+        [SerializeField] private LayerMask attackableLayer;
 
         //event
         public event Action<float> OnTakeDamage;
@@ -80,26 +80,28 @@ namespace HealthSystem
         protected virtual void Start()
         {
             CurrentHealth = MaxHealth;
-            ContactedGameObjects = new List<GameObject>();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if(!ContactedGameObjects.Contains(other.gameObject)) ContactedGameObjects.Add(other.gameObject);
+            if (other.gameObject.layer == attackableLayer)
+            {
+                contactedGameObject = other.gameObject;
+            }
             
             Attackable attackable = other.GetComponent<Attackable>();
             if (attackable != null && IsAlive && !isInvincible)
             {
                 OnTakeDamage?.Invoke(attackable.Damage);
             }
+            
+            DOVirtual.DelayedCall(0.1f, () => contactedGameObject = null);
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (ContactedGameObjects.Contains(other.gameObject))
-            {
-                ContactedGameObjects.Remove(other.gameObject);
-            }
+            if(other.gameObject == contactedGameObject)
+                contactedGameObject = null;
         }
 
         public virtual void TakeDamage(float damage)
@@ -142,13 +144,13 @@ namespace HealthSystem
 
         protected void KnockbackEffect(Rigidbody2D rb)
         {
-            if (ContactedGameObjects.Count == 0)
+            if (contactedGameObject == null)
             {
                 rb.velocity = new Vector2(knockbackDirection.x, rb.velocity.y + knockbackDirection.y);    
             }
             else
             {
-                Transform contactedTarget = ContactedGameObjects[0].transform;
+                Transform contactedTarget = contactedGameObject.transform;
                 float direction = Mathf.Sign(transform.position.x - contactedTarget.position.x);
                 rb.velocity = new Vector2(knockbackDirection.x * direction, rb.velocity.y + knockbackDirection.y);
             }

@@ -87,7 +87,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1297565771
-  m_SortingLayer: 5
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 826951771, guid: 4b4539d8d3a29a0488c71b771aadb35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -344,7 +344,6 @@ MonoBehaviour:
   jumpPress: 0
   attackInput: 0
   isFacingRight: 1
-  _playerStateMachine: {fileID: 6221129816811385812}
 --- !u!114 &4389651022968860418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +397,10 @@ MonoBehaviour:
   colorFlashDuration: 1
   colorFlashTimes: 3
   takeDamageEventChannelSo: {fileID: 11400000, guid: 7b2c9d978bec4bd4f87080e43998fb7a, type: 2}
-  ContactedGameObjects: []
+  contactedGameObject: {fileID: 0}
+  attackableLayer:
+    serializedVersion: 2
+    m_Bits: 0
   freezeFramesWhenHurt: 30
   hurtParticlePref: {fileID: 5316648959866462818, guid: 16441dbd3c41f6247bcfe8c9ac0d1392, type: 3}
   hurtSpriteEffectPref: {fileID: 3845977070754715306, guid: 432e0f7d2f013704c9bb6767900ed21c, type: 3}
@@ -415,7 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footStepSound: {fileID: 8300000, guid: 236072feec3ac9841b6b47f9f5069e53, type: 3}
-  footStepSoundVolume: 0.6
+  footStepSoundVolume: 0.35
   jumpSound: {fileID: 11400000, guid: f8aec9f4cd1032c40b2c49dcead6031b, type: 2}
   landSound: {fileID: 11400000, guid: b29c1bb018cd0c648b39a373156dbe90, type: 2}
   fallSound: {fileID: 8300000, guid: 0ebb6accfdf6bbc4f8ec49c72763b860, type: 3}
@@ -438,6 +440,7 @@ MonoBehaviour:
   CurrentStateView: 
   CurrentSubStateView: 
   autoPause: 0
+  attackCooldown: 0.5
   m_stateList: []
 --- !u!82 &4584891575002821253
 AudioSource:
@@ -611,7 +614,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 28866063
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 10261652, guid: 4b4539d8d3a29a0488c71b771aadb35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -748,7 +751,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 28866063
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 10261652, guid: 4b4539d8d3a29a0488c71b771aadb35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -916,7 +919,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 28866063
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 10261652, guid: 4b4539d8d3a29a0488c71b771aadb35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

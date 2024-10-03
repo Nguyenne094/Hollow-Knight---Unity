@@ -9,5 +9,6 @@ namespace Utilities
         internal static int Turn = Animator.StringToHash("Turn");
         internal static int Startle = Animator.StringToHash("Startle");
         internal static int Hurt = Animator.StringToHash("Hurt");
+        internal static int Chase = Animator.StringToHash("Chase");
     }
 }

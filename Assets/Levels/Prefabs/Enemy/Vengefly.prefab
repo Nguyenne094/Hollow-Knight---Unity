@@ -13,11 +13,9 @@ GameObject:
   - component: {fileID: 6082719045225599757}
   - component: {fileID: -6597353426094589633}
   - component: {fileID: -1668892509010773252}
-  - component: {fileID: -6512671468686136531}
   - component: {fileID: 4726172548619162466}
   - component: {fileID: 7339195336809906497}
   - component: {fileID: 3026640278959744048}
-  - component: {fileID: 8066037536752262871}
   m_Layer: 7
   m_Name: Vengefly
   m_TagString: Enemy
@@ -132,7 +130,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: a9758d09b8059214cbbdca2d83c692ba, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -154,7 +152,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a9758d09b8059214cbbdca2d83c692ba, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -174,11 +172,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.07967815}
+  m_Offset: {x: -0.072396636, y: -0.12365055}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -188,105 +186,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4329379, y: 1.2106438}
+  m_Size: {x: 0.7187989, y: 0.48410988}
   m_EdgeRadius: 0
---- !u!82 &-6512671468686136531
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3473075587121769645}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &4726172548619162466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +210,10 @@ MonoBehaviour:
   colorFlashDuration: 1
   colorFlashTimes: 3
   takeDamageEventChannelSo: {fileID: 11400000, guid: 5f6be0ee7115e4947a6662982a2762c6, type: 2}
-  ContactedGameObjects: []
+  contactedGameObject: {fileID: 0}
+  attackableLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &7339195336809906497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,11 +242,13 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(444,-38)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-1.766573,115.972069)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(2.43902874,110)","WatchedFields":["abortType"]},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"AI.Enemy.Vengefly.FindTarget","NodeData":{"Offset":"(-265.387634,124.857056)","WatchedFields":["playerDetected"]},"ID":3,"Name":"Find
-        Target","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Player","IsShared":true,"Tooltip":"This
-        is Player","TransformmValue":0},"Stringtag":"Player","Singlerange":5,"SingledetectedRange":10,"SharedBoolplayerDetected":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"PlayerDetected","IsShared":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.SetTrigger","NodeData":{"Offset":"(4,124.857178)"},"ID":4,"Name":"Set
-        Trigger","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":1},"SharedStringparamaterName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Startle"}},{"Type":"AI.Enemy.Vengefly.ChaseTarget","NodeData":{"Offset":"(157.0614,124.857178)","WatchedFields":["playerDetected"]},"ID":5,"Name":"Chase
-        Target","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Player","IsShared":true,"Tooltip":"This
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(444,-38)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-1.766573,115.972069)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-3,109)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-126.612213,96.4897842)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Self","Children":[{"Type":"AI.Vegnefly.VegneflyPatrol","NodeData":{"Offset":"(-58.9796028,109.795921)"},"ID":4,"Name":"Vegnefly
+        Patrol","Instant":true,"TargetDetectiontargetDetection":6,"SinglepatrolRange":2,"SinglepatrolSpeed":1},{"Type":"BehaviorDesigner.Runtime.Tasks.UntilSuccess","NodeData":{"Offset":"(63.5917969,108.734612)"},"ID":5,"Name":"Until
+        Success","Instant":true,"Children":[{"Type":"AI.TargetDetection","NodeData":{"Offset":"(-0.816328049,99.18368)"},"ID":6,"Name":"Target
+        Detection","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Player","IsShared":true,"Tooltip":"This
+        is Player","TransformmValue":0},"Singlerange":5,"SingledetectedRange":10,"SharedBoolplayerDetected":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"PlayerDetected","IsShared":true,"BooleanmValue":false}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.SetTrigger","NodeData":{"Offset":"(55.5555458,120.000008)"},"ID":7,"Name":"Set
+        Trigger","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":1},"SharedStringparamaterName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Startle"}},{"Type":"AI.ChaseTarget","NodeData":{"Offset":"(174.2654,119.530586)"},"ID":8,"Name":"Chase
+        Target","Instant":true,"Singlespeed":2,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Player","IsShared":true,"Tooltip":"This
         is Player","TransformmValue":2},"SharedBoolplayerDetected":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"PlayerDetected","IsShared":true,"BooleanmValue":false}}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Player","IsShared":true,"Tooltip":"This
         is Player","TransformmValue":3},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"PlayerDetected","IsShared":true,"BooleanmValue":false}]}'
       fieldSerializationData:
@@ -372,23 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce044d0f88980e4dbb31b0c88083ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8066037536752262871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3473075587121769645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8adfb69370c940af90ee28b6e1cd9683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: -6512671468686136531}
-  triggerClip: {fileID: 0}
-  innerRange: 10
-  outerRange: 13
-  disableOnTrigger: 0
 --- !u!1 &6993597438439654589
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +345,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.07967815}
+  m_Offset: {x: -0.072396636, y: -0.12365055}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -466,7 +355,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4329379, y: 1.2106438}
+  m_Size: {x: 0.7187989, y: 0.48410988}
   m_EdgeRadius: 0
 --- !u!114 &7436268014997399619
 MonoBehaviour:

@@ -56,7 +56,6 @@ public abstract class SoundAbstract : MonoBehaviour
     {
         if (disableOnTrigger && triggerClips.Length > 0 && other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            Debug.Log("Trigger");
             audioSource?.Stop();
             HandleVolumeAndPanStereo(audioSource);
             audioSource.PlayOneShot(triggerClips[Random.Range(0, triggerClips.Length)]);
