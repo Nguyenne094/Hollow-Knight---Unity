@@ -16,13 +16,18 @@ namespace Bap.State_Machine
 
         [SerializeField] private bool autoPause = false;
         [SerializeField] private float attackCooldown = 0.5f;
+        [SerializeField] private List<string> m_stateList;
         
         private BaseState _currentState;
         private BaseState _currentSubState;
         private StateFactory _stateFactory;
         protected Player _player;
-        
-        [SerializeField] private List<string> m_stateList;
+
+        private bool isJumping = false;
+        public bool IsJumping
+        {
+            get => isJumping;
+        }
 
         #region Properties
 
@@ -92,6 +97,11 @@ namespace Bap.State_Machine
             CurrentState?.UpdateStates();
         }
 
+        private void UpdateConditions()
+        {
+            isJumping = Player.Rb.velocityY >= 0;
+        }
+
         public void SetCurrentState(BaseState currentState)
         {
             CurrentState = currentState;
@@ -101,22 +111,22 @@ namespace Bap.State_Machine
             CurrentSubState = currentSubState;
         }
 
-        public bool IsIdle()
+        public bool OnIdleState()
         {
             return CurrentSubState == _stateFactory.GetIdleState();
         }
         
-        public bool IsWalking()
+        public bool OnWalkState()
         {
             return CurrentSubState == _stateFactory.GetWalkState();
         }
         
-        public bool IsJumping()
+        public bool OnJumpState()
         {
             return CurrentState == _stateFactory.GetJumpState();
         }
 
-        public bool IsFalling()
+        public bool OnFallState()
         {
             return CurrentState == _stateFactory.GetFallState();
         }

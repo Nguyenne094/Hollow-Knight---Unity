@@ -38,6 +38,7 @@ namespace Bap.State_Machine
             }
             else if (_ctx.Player.AttackInput)
             {
+                Debug.Log("Hello");
                 SwitchState(_factory.GetAttackState());
             }
         }

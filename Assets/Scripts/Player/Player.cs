@@ -40,7 +40,7 @@ public class Player : Utilities.Singleton<Player>
     
     public bool JumpPress { get => jumpPress; set => jumpPress = value; }
     public bool CanJump { get => canJump; set => canJump = value; }
-    public bool AttackInput { get => attackInput; }
+    public bool AttackInput { get => attackInput; private set => attackInput = value; }
     public Rigidbody2D Rb { get => rb;}
     public bool IsFacingRight 
     {
@@ -95,7 +95,7 @@ public class Player : Utilities.Singleton<Player>
     private void Update()
     {
         animator.SetFloat(PlayerAnimationString.yVelocity, rb.velocity.y);
-        animator.SetBool(PlayerAnimationString.Idle, _playerStateMachine.IsIdle());
+        animator.SetBool(PlayerAnimationString.Idle, _playerStateMachine.OnIdleState());
         animator.SetBool(PlayerAnimationString.IsGrounded, directionChecker.IsGrounded);
     }
 
@@ -153,11 +153,13 @@ public class Player : Utilities.Singleton<Player>
     {
         if (ctx.started && attackTime == attackTimeout)
         {
-            attackInput = true;
+            Debug.Log("attack");
+            AttackInput = true;
             attackTimeout = .4f;
             attackTime = attackTimeout;
             
-            DOVirtual.DelayedCall(Time.deltaTime, () => attackInput = false);
+            DOVirtual.DelayedCall(Time.deltaTime, () => { AttackInput = false; print(AttackInput); });
+            Debug.Log(AttackInput);
             DOVirtual.Float(attackTime, 0, attackTimeout, (x) =>
             {
                 attackTime = x;

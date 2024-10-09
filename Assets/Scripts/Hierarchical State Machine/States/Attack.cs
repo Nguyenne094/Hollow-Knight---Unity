@@ -15,6 +15,7 @@ namespace Bap.State_Machine
 
         public override void Enter()
         {
+            Debug.Log("Attakc");
             InitializeSubState();
             if (_ctx.Player.MoveInput.y == 1)
             {
@@ -42,11 +43,11 @@ namespace Bap.State_Machine
 
         protected override void CheckSwitchState()
         {
-            if (_ctx.Player.JumpPress)
+            if (_ctx.IsJumping)
             {
                 SwitchState(_factory.GetJumpState());
             }
-            else if(_ctx.Player.Rb.velocityY < -0.01f)
+            else if(!_ctx.IsJumping && !_ctx.Player.DirectionChecker.IsGrounded)
             {
                 SwitchState(_factory.GetFallState());
             }
@@ -58,13 +59,13 @@ namespace Bap.State_Machine
 
         public override void InitializeSubState()
         {
-            if (_ctx.Player.Rb.velocity == Vector2.zero)
+            if (_ctx.Player.Rb.velocityX == 0)
             {
-                _ctx.SetCurrentSubState(_factory.GetIdleState());
+                SetSubState(_factory.GetIdleState());
             }
             else
             {
-                _ctx.SetCurrentSubState(_factory.GetIdleState());
+                SetSubState(_factory.GetWalkState());
             }
         }
     }

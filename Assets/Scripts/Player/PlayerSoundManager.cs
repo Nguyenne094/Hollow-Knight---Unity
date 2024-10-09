@@ -37,11 +37,11 @@ public class PlayerSoundManager : MonoBehaviour
 
     private void PlayRunSound()
     {
-        if (!audioSource.isPlaying && Player.Instance.PlayerStateMachine.IsWalking() && Player.Instance.DirectionChecker.IsGrounded)
+        if (!audioSource.isPlaying && Player.Instance.PlayerStateMachine.OnWalkState() && Player.Instance.DirectionChecker.IsGrounded)
         {
             audioSource.PlayOneShot(footStepSound, footStepSoundVolume);
         }
-        else if (audioSource.isPlaying && !Player.Instance.PlayerStateMachine.IsWalking() || audioSource.isPlaying && !Player.Instance.DirectionChecker.IsGrounded)
+        else if (audioSource.isPlaying && !Player.Instance.PlayerStateMachine.OnWalkState() || audioSource.isPlaying && !Player.Instance.DirectionChecker.IsGrounded)
         {
             audioSource.Stop();
         }
@@ -49,11 +49,11 @@ public class PlayerSoundManager : MonoBehaviour
 
     private void PlayFallSound()
     {
-        if (!audioSource.isPlaying && Player.Instance.PlayerStateMachine.IsJumping() && Player.Instance.Rb.velocityY < 0)
+        if (!audioSource.isPlaying && Player.Instance.PlayerStateMachine.OnJumpState() && Player.Instance.Rb.velocityY < 0)
         {
             audioSource.PlayOneShot(fallSoundEffect, fallSoundVolume);
         }
-        else if(audioSource.isPlaying && Player.Instance.PlayerStateMachine.IsJumping() && Player.Instance.Rb.velocityY >= 0)
+        else if(audioSource.isPlaying && Player.Instance.PlayerStateMachine.OnJumpState() && Player.Instance.Rb.velocityY >= 0)
         {
             audioSource.Stop();
         }

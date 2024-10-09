@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 519420031}
+  _belongToChunk: {fileID: 0}
   _subject: {fileID: 864077294}
   _applyX: 1
   _applyY: 0
@@ -2223,6 +2224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 519420031}
+  _belongToChunk: {fileID: 0}
   _subject: {fileID: 864077294}
   _applyX: 1
   _applyY: 0
@@ -2276,6 +2278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 519420031}
+  _belongToChunk: {fileID: 0}
   _subject: {fileID: 864077294}
   _applyX: 1
   _applyY: 0
@@ -2882,6 +2885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 519420031}
+  _belongToChunk: {fileID: 0}
   _subject: {fileID: 864077294}
   _applyX: 1
   _applyY: 0
@@ -3332,6 +3336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 970596547}
   - component: {fileID: 970596548}
+  - component: {fileID: 970596549}
   m_Layer: 0
   m_Name: Section_1
   m_TagString: Untagged
@@ -3396,7 +3401,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -34.121082, y: 4.722363}
+  m_Offset: {x: -33.70433, y: 6.1809864}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3406,8 +3411,20 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 28.739113, y: 11.038804}
+  m_Size: {x: 29.572613, y: 17.012215}
   m_EdgeRadius: 0
+--- !u!114 &970596549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970596546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab41c66b541f4ad19d01de6a6389957b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &983697701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,6 +3643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 519420031}
+  _belongToChunk: {fileID: 0}
   _subject: {fileID: 864077294}
   _applyX: 1
   _applyY: 0
@@ -5306,6 +5324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 519420031}
+  _belongToChunk: {fileID: 0}
   _subject: {fileID: 864077294}
   _applyX: 1
   _applyY: 0
@@ -8005,6 +8024,10 @@ PrefabInstance:
     - target: {fileID: 2918949659866141621, guid: 9a452db3978d5bf489e0c3a8c58017da, type: 3}
       propertyPath: m_Name
       value: PLAYER
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221129816811385812, guid: 9a452db3978d5bf489e0c3a8c58017da, type: 3}
+      propertyPath: autoPause
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7271838902404270473, guid: 9a452db3978d5bf489e0c3a8c58017da, type: 3}
       propertyPath: m_LocalPosition.x

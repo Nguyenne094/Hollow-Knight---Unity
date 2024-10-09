@@ -12,7 +12,6 @@ namespace Bap.State_Machine
         private float minHoldingTime;
         private float timeToPeak;
         private float gravity = -9.8f;
-        private bool isJumping = false;
         private bool peak = false;
         private float jumpForce;
         
@@ -37,7 +36,6 @@ namespace Bap.State_Machine
 
         public override void UpdateState()
         {
-            isJumping = _ctx.Player.Rb.velocityY >= 0;
             JumpCalculation();
             CheckSwitchState();
         }
@@ -50,7 +48,7 @@ namespace Bap.State_Machine
 
         protected override void CheckSwitchState()
         {
-            if (!isJumping)
+            if (!_ctx.IsJumping)
             {
                 SwitchState(_factory.GetFallState());
             }
