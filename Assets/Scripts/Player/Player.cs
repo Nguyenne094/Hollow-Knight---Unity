@@ -17,7 +17,6 @@ public class Player : Utilities.Singleton<Player>
     [SerializeField, Range(0.1f, 100)] private float speed = 5f;
 
     [Header("Jump Settings")] 
-    [SerializeField] private float gravity = 9.82f;
     [SerializeField] private float yVelocityLimit = -10f;
     [SerializeField] private float fallingGravityMultiplier = 2f;
     
@@ -29,8 +28,6 @@ public class Player : Utilities.Singleton<Player>
     [SerializeField] private bool attackInput = false;
     [SerializeField] private bool isFacingRight = true;
     
-    private float jumpHoldingTime = 0;
-    
     private new BoxCollider2D collider;
     private Rigidbody2D rb;
     private Animator animator;
@@ -41,9 +38,10 @@ public class Player : Utilities.Singleton<Player>
     private DirectionChecker directionChecker;
     private  HierarchicalStateMachine _playerStateMachine;
     
-    public bool JumpPress { get => jumpPress; }
+    public bool JumpPress { get => jumpPress; set => jumpPress = value; }
+    public bool CanJump { get => canJump; set => canJump = value; }
     public bool AttackInput { get => attackInput; }
-    public Rigidbody2D Rb { get => rb; }
+    public Rigidbody2D Rb { get => rb;}
     public bool IsFacingRight 
     {
         get => isFacingRight;
@@ -103,35 +101,10 @@ public class Player : Utilities.Singleton<Player>
 
     private void FixedUpdate()
     {
-        rb.gravityScale = rb.velocity.y < -0.1f ? Mathf.Lerp(rb.gravityScale, fallingGravityMultiplier, 10 * Time.deltaTime) : 1;
-        JumpCalculation();
+        // rb.gravityScale = rb.velocity.y < -0.1f ? Mathf.Lerp(rb.gravityScale, fallingGravityMultiplier, 10 * Time.deltaTime) : 1;
         if (!LockVelocity)
         {
             rb.velocity = new Vector2(MoveInput.x * speed, (rb.velocityY < yVelocityLimit) ? yVelocityLimit : rb.velocity.y);
-        }
-    }
-
-    private void JumpCalculation()
-    {
-        if (jumpPress && canJump)
-        {
-            jumpHoldingTime += Time.deltaTime * 2;
-            if (jumpHoldingTime <= 0.2) jumpHoldingTime = 0.2f;
-            else if (jumpHoldingTime >= 1)
-            {
-                jumpPress = false;
-            }
-            float jumpForce = Mathf.Sqrt(-2 * gravity * Easing.EaseOutCir(jumpHoldingTime));
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
-        else if (!jumpPress)
-        {
-            jumpHoldingTime = 0.01f;
-        }
-
-        if (rb.velocityY <= 0)
-        {
-            canJump = false;
         }
     }
 
@@ -164,7 +137,7 @@ public class Player : Utilities.Singleton<Player>
     {
         if (ctx.started && directionChecker.IsGrounded)
         {
-            canJump = true;
+            CanJump = true;
             jumpPress = true;
         }
 

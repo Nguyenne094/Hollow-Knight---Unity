@@ -28,7 +28,7 @@ namespace Bap.State_Machine
         protected override void CheckSwitchState()
         {
             //TODO: can switch to Jump, Fall, Attack, Hurt, Dash
-            if (_ctx.Player.JumpPress)
+            if (_ctx.Player.CanJump)
             {
                 SwitchState(_factory.GetJumpState());
             }

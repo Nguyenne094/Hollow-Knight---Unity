@@ -14,7 +14,7 @@ namespace Bap.State_Machine
         public string CurrentStateView;
         public string CurrentSubStateView;
 
-        [SerializeField] private bool autoPause = true;
+        [SerializeField] private bool autoPause = false;
         [SerializeField] private float attackCooldown = 0.5f;
         
         private BaseState _currentState;
@@ -114,6 +114,11 @@ namespace Bap.State_Machine
         public bool IsJumping()
         {
             return CurrentState == _stateFactory.GetJumpState();
+        }
+
+        public bool IsFalling()
+        {
+            return CurrentState == _stateFactory.GetFallState();
         }
     }
 }

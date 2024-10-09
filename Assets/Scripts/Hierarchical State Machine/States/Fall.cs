@@ -13,6 +13,7 @@ namespace Bap.State_Machine
         public override void Enter()
         {
             InitializeSubState();
+            _ctx.Player.Rb.gravityScale = 2.5f;
         }
 
         public override void UpdateState()
@@ -30,6 +31,7 @@ namespace Bap.State_Machine
             //TODO: can switch to Jump, Fall, Attack, Hurt, Dash
             if(_ctx.Player.DirectionChecker.IsGrounded)
             {
+                _ctx.Player.Rb.gravityScale = 1;
                 SwitchState(_factory.GetGroundState());
             }
             else if (_ctx.Player.AttackInput)

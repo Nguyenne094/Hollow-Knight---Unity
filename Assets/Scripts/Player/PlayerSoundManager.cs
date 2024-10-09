@@ -13,13 +13,14 @@ public class PlayerSoundManager : MonoBehaviour
     [SerializeField] private AudioClip footStepSound;
     [SerializeField, Range(0, 1)] private float footStepSoundVolume = .2f;
     [Space, Header("Jump Sound")]
-    [SerializeField] private SoundEffect jumpSound;
-    [SerializeField] private SoundEffect landSound;
-    [SerializeField] private AudioClip fallSound;
+    [SerializeField] private SoundEffect jumpSoundEffect;
+    [SerializeField] private SoundEffect landSoundEffect;
+    [SerializeField] private AudioClip fallSoundEffect;
     [SerializeField, Range(0, 1)] private float fallSoundVolume = .2f;
     [Space] [SerializeField] private SoundEffect attackSoundEffect;
     [SerializeField] private AudioClip damageSound;
     [SerializeField, Range(0, 1)] private float damageSoundVolume = .2f;
+   [SerializeField] private SoundEffect hurtSoundEffect;
     
     private AudioSource audioSource;
     private Dictionary<GameObject, ObjectPool<GameObject>> soundPoolDictionary = new Dictionary<GameObject, ObjectPool<GameObject>>();
@@ -50,7 +51,7 @@ public class PlayerSoundManager : MonoBehaviour
     {
         if (!audioSource.isPlaying && Player.Instance.PlayerStateMachine.IsJumping() && Player.Instance.Rb.velocityY < 0)
         {
-            audioSource.PlayOneShot(fallSound, fallSoundVolume);
+            audioSource.PlayOneShot(fallSoundEffect, fallSoundVolume);
         }
         else if(audioSource.isPlaying && Player.Instance.PlayerStateMachine.IsJumping() && Player.Instance.Rb.velocityY >= 0)
         {
@@ -60,17 +61,22 @@ public class PlayerSoundManager : MonoBehaviour
 
     public void PlayJumpSound()
     {
-        PlaySoundEffect(jumpSound);
+        PlaySoundEffect(jumpSoundEffect);
     }
 
     public void PlayLandSound()
     {
-        PlaySoundEffect(landSound);
+        PlaySoundEffect(landSoundEffect);
     }
 
     public void PlayAttackSound()
     {
         PlaySoundEffect(attackSoundEffect);
+    }
+
+    public void PlayHurtSound()
+    {
+        PlaySoundEffect(hurtSoundEffect);
     }
 
     public void PlaySoundEffect(SoundEffect soundEffect)

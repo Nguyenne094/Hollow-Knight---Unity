@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2595236146546072031}
   - component: {fileID: 6221129816811385812}
   - component: {fileID: 4584891575002821253}
+  - component: {fileID: 1491865228848483955}
   m_Layer: 10
   m_Name: PLAYER
   m_TagString: Player
@@ -86,15 +87,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1297565771
-  m_SortingLayer: 3
+  m_SortingLayerID: 28866063
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 826951771, guid: 4b4539d8d3a29a0488c71b771aadb35e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8160377, b: 0.8160377, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 0.66, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -188,7 +189,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 1.28, y: 1.28}
+    newSize: {x: 0.66, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -236,14 +237,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8ec0e90e-60dd-490f-af53-98a5046fe234
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0d4c9856-921b-47cf-a30c-b1b0ade8310d
-    m_ActionName: 'Player/Look[/Mouse/delta]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6f312b44-f15a-483b-a1f3-ab6e16de77dd
-    m_ActionName: 'Player/Fire[/Mouse/leftButton]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: e14d5609-369a-4785-aad5-171a1a9178cb
@@ -316,6 +309,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ae4e9d10-4b9f-4e90-a311-45bc19747f3b
     m_ActionName: 'Player/Attack[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15ddf507-e7a1-469d-a607-e16f0571e02b
+    m_ActionName: 'Player/AnotherJump[/Keyboard/upArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -335,7 +332,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Persist: 1
   speed: 4
-  gravity: -9.82
   yVelocityLimit: -10
   fallingGravityMultiplier: 2
   moveInput: {x: 0, y: 0}
@@ -365,7 +361,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 4097
+      m_Bits: 4096
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -418,13 +414,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footStepSound: {fileID: 8300000, guid: 236072feec3ac9841b6b47f9f5069e53, type: 3}
   footStepSoundVolume: 0.35
-  jumpSound: {fileID: 11400000, guid: f8aec9f4cd1032c40b2c49dcead6031b, type: 2}
-  landSound: {fileID: 11400000, guid: b29c1bb018cd0c648b39a373156dbe90, type: 2}
-  fallSound: {fileID: 8300000, guid: 0ebb6accfdf6bbc4f8ec49c72763b860, type: 3}
+  jumpSoundEffect: {fileID: 11400000, guid: f8aec9f4cd1032c40b2c49dcead6031b, type: 2}
+  landSoundEffect: {fileID: 11400000, guid: b29c1bb018cd0c648b39a373156dbe90, type: 2}
+  fallSoundEffect: {fileID: 8300000, guid: 0ebb6accfdf6bbc4f8ec49c72763b860, type: 3}
   fallSoundVolume: 0.2
   attackSoundEffect: {fileID: 11400000, guid: 80757d6ca37de2a4d98584f147fec702, type: 2}
   damageSound: {fileID: 8300000, guid: d7e70430c7f8d614a9256c32c8566a05, type: 3}
   damageSoundVolume: 1
+  hurtSoundEffect: {fileID: 11400000, guid: bb6ccb34c2c93a645bb471aea3db20c7, type: 2}
 --- !u!114 &6221129816811385812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,7 +460,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 2.4487152
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -539,6 +536,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1491865228848483955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918949659866141621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d44b6cdb09e0347bd298d647c19048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 0}
+  triggerTag: FadeOutTrigger
+  fadeDuration: 1
 --- !u!1 &3283942051171943142
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +850,7 @@ Transform:
   m_GameObject: {fileID: 8661658645751838045}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

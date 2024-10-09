@@ -16,9 +16,11 @@ namespace HealthSystem
         [SerializeField] private SpriteVisualEffect hurtSpriteEffectPref;
         
         private IObjectPool<ParticleSystem> hurtParticlePool;
+        private PlayerSoundManager soundManager;
 
         protected override void Awake()
         {
+            soundManager = GetComponent<PlayerSoundManager>();
             hurtParticlePool = new ObjectPool<ParticleSystem>(CreateHurtParticle, OnGetHurtParticle, OnReleaseHurtParticle, OnDestroyHurtParticle, true, 5, 5);
             base.Awake();
         }
@@ -70,6 +72,7 @@ namespace HealthSystem
             }
 
             //* Play hurt SOUND EFFECT
+            soundManager.PlayHurtSound();
             
             StartCoroutine(FreezeFrame(freezeFramesWhenHurt));
             
